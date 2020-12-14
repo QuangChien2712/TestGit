@@ -83,7 +83,7 @@ Node* chentruocgiatrivalue(Node* head, int x, int value){
 	Node* p;
 	int k, soluong = 0;
 	if(head == NULL){
-		chendau(head, x);
+		head = chendau(head, x);
 	}
 	for(k = 2, p = head; p!= NULL; p=p->next, k++){
 		if(p->data == value){
@@ -169,6 +169,24 @@ Node* xoanodecogiatrivalue(Node* head, int value){
 	return head;
 }
 
+Node* chensapxep(Node* head, int x){
+	Node* truoc = NULL;
+	if(head==NULL) {
+		head = chendau(head, x);
+		}else{
+		Node* p= head;
+		if(p->data > x){
+		head = chendau(head, x);
+		}else{
+			while(p->next != NULL){
+				if(p->data > x) { 
+				head = chentruocgiatrivalue(head, x, p->data);}
+				p=p->next;
+				};
+				head = chensaugiatrivalue(head, x, p->data);
+			}
+		}
+}
 Node* nhapdanhsach(){
 	Node* head = NULL;
 	int n, x;
@@ -177,19 +195,8 @@ Node* nhapdanhsach(){
 	for(int i = 1; i <= n; i++){
 		printf("Nhap gia tri can them: ");
 		scanf("%d", &x);
-		if(head==NULL) {
-		head = chendau(head, x);
-		}else{Node* p= head;
-			if(p->data > x){head = chendau(head, x);
-				}else{
-					while(p->next != NULL){
-						if(p->data > x) head = chentruocgiatrivalue(head, x, p->data);
-						p=p->next;
-					};
-					head = chensaugiatrivalue(head, x, p->data);
-				}//end else
-			}//end else
-		}//end for
+		head = chensapxep(head, x);
+		}
 	return head;	
 }
 
@@ -201,8 +208,8 @@ void indanhsach(Node* head){
 }
 
 int main(){
-	int n, x;
-	Node* head = nhapdanhsach();
+	Node* head = NULL;
+	head = nhapdanhsach();
 	printf("\n\n\tDanh sach ban dau la\n");
 	indanhsach(head);
 	

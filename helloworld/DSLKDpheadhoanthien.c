@@ -174,7 +174,8 @@ Node* nhapdanhsach(){
 	int n, x;
 	printf("Nhap n: ");
 	scanf("%d", &n);
-	for(int i = 1; i <= n; i++){
+	int i;
+	for(i = 1; i <= n; i++){
 		printf("Nhap gia tri can them: ");
 		scanf("%d", &x);
 		head = chencuoi(head, x);
