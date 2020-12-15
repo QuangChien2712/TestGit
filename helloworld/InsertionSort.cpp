@@ -40,7 +40,7 @@ int main(){
     xuatmang(A, n);
 
     sapxepInsertionSort(A, n);
-    cout<<"\nMang sau khi BubbleSort la: \n";
+    cout<<"\nMang sau khi InsertionSort la: \n";
     xuatmang(A, n);
     
     return 0;

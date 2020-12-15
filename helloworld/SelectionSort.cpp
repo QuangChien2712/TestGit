@@ -45,8 +45,8 @@ int main(){
     xuatmang(A, n);
 
     sapxepSelectionSort(A, n);
-    cout<<"\nMang sau khi BubbleSort la: \n";
+    cout<<"\nMang sau khi SelectionSort la: \n";
     xuatmang(A, n);
-    
+
     return 0;
 }
