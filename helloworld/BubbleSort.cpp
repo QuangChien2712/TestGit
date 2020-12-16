@@ -24,7 +24,7 @@ void sapxepBubbleSort(int A[], int n){
     int temp;
     for(int i = 0; i < n; i++){
         for(int j = n-1; j > i; j--){
-            if(A[j]>A[j-1]){
+            if(A[j]<A[j-1]){
                 temp = A[j];
                 A[j]= A[j - 1];
                 A[j -1]= temp;

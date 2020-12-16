@@ -10,7 +10,7 @@ void nhapmang(int A[], int n){
     cout<<"Nhap cac phan tu cua mang: \n";
     srand(time(NULL));
     for(int i = 0; i<n; i++){
-    A[i] = rand()%1000;
+    A[i] = rand()%100;
     }
 }
 
@@ -24,11 +24,11 @@ void sapxepInsertionSort(int A[], int n){
     int x;
     int pos = 0;
     for(int i = 1; i < n; i++){
-    x=A[i];
+      x=A[i];
         for(pos = i; (pos>0)&&(A[pos - 1]>x); pos--){
         A[pos]= A[pos-1];
         }
-    A[pos]=x;
+     A[pos]=x;
     }
 }
 
